@@ -5,6 +5,7 @@ const todoList = document.querySelector('.todo-list');
 
 //EVENT HANDLERS
 todoBtn.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteOrCheck);
 
 //FUNCTIONS
 function addTodo(e) {
@@ -32,4 +33,22 @@ function addTodo(e) {
 	todoList.appendChild(todoDiv);
 	//CLEAR TODO INPUT FIELD
 	todoInput.value = '';
+}
+
+function deleteOrCheck(e) {
+	const item = e.target; //item will be whichever element is clicked on
+
+	//DELETE TODO
+	if (item.classList[0] === 'trash-btn') {
+		const todo = item.parentElement; //to get access to the actual <li> and not the trash-btn
+		//ANIMATION
+		todo.classList.add('fall');
+		todo.addEventListener('transitionend', () => todo.remove()); //eventListener that will run function only when the transition is done
+	}
+
+	//MARK TODO COMPLETED
+	if (item.classList[0] === 'complete-btn') {
+		const todo = item.parentElement;
+		todo.classList.toggle('completed'); //adds/removes the class 'completed' to the todoList div
+	}
 }
