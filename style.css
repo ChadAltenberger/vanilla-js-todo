@@ -114,3 +114,42 @@ form button:focus {
 	transform: translateY(8rem) rotateZ(20deg);
 	opacity: 0;
 }
+
+/* GET RID OF ALL STYLING OF THE <SELECT> ELEMENT */
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border: none;
+}
+
+.select {
+	margin: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+select {
+	color: #ff6f47;
+	width: 10rem;
+	cursor: pointer;
+	padding: 1rem;
+}
+
+/* PSUEDO ELEMENT - CREATE AND STYLE THE DROP DOWN ARROW */
+.select::after {
+	content: '\25bc';
+	position: absolute;
+	background-color: #ff6f47;
+	top: 0;
+	right: 0;
+	padding: 1rem;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+.select:hover::after {
+	background: white;
+	color: #ff6f47;
+}
