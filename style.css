@@ -4,10 +4,20 @@
 	box-sizing: border-box;
 }
 
+.text-secondary {
+	color: #e48f78;
+}
+
+header p {
+	padding: 0 0.8rem;
+}
+
 body {
-	background-image: linear-gradient(120deg, #e2c35f, #e48f78);
-	color: white;
+	/* background-image: linear-gradient(120deg, #e2c35f, #e48f78); */
+	background: url('./images/bg.jpg') no-repeat center center/cover;
+	color: #fff;
 	font-family: 'poppins', sans-serif;
+	width: 100vw;
 	min-height: 100vh;
 }
 
@@ -28,19 +38,19 @@ form button {
 	padding: 0.5rem;
 	font-size: 2rem;
 	border: none;
-	background: white;
+	background: #fff;
 }
 
 form button {
 	color: #e48f78;
-	background: white;
+	background: #fff;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
 form button:hover {
 	background: #e48f78;
-	color: white;
+	color: #fff;
 }
 
 form button:focus {
@@ -64,7 +74,7 @@ form button:focus {
 
 .todo {
 	margin: 0.5rem;
-	background: white;
+	background: #fff;
 	color: black;
 	font-size: 1.5rem;
 	display: flex;
@@ -88,7 +98,7 @@ form button:focus {
 .complete-btn,
 .trash-btn {
 	background: #ff6f47;
-	color: white;
+	color: #fff;
 	border: none;
 	padding: 1rem;
 	cursor: pointer;
@@ -96,7 +106,7 @@ form button:focus {
 }
 
 .complete-btn {
-	background: #58bd58;
+	background: #659c65;
 }
 
 .complete-btn:focus,
@@ -154,7 +164,7 @@ select {
 }
 
 .select:hover::after {
-	background: white;
+	background: #fff;
 	color: #ff6f47;
 }
 
@@ -166,6 +176,10 @@ select {
 		justify-content: center;
 		align-items: center;
 	}
+
+	header {
+		flex-direction: column;
+	}
 }
 
 @media screen and (max-width: 394px) {
@@ -175,5 +189,9 @@ select {
 
 	button {
 		height: 5rem;
+	}
+
+	header {
+		flex-direction: column;
 	}
 }
